@@ -1,3 +1,5 @@
+require 'terminal-table'
+
 class UdaciList
   include UdaciListErrors
   attr_reader :title, :items
@@ -29,16 +31,17 @@ class UdaciList
   end
 
   def all
-    puts '-' * @title.length
-    puts @title
-    puts '-' * @title.length
+    rows = []
     @items.each_with_index do |item, position|
-      puts "#{position + 1}) #{item.details}"
+      rows << ["#{position + 1}"] + item.details
     end
+
+    table = Terminal::Table.new :title => @title, :rows => rows
+    puts table, "\n"
   end
 
-  def filter_by_type(item_type)
-
+  def filter(type)
+    @items.select { |item| item.type.casecmp(type).zero? }
   end
 
 end

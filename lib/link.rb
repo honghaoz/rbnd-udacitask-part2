@@ -13,10 +13,11 @@ class LinkItem
   end
 
   def details
-    format_type + 
-    format_description(@description) + 
-    'site name: ' + 
-    format_name
+    [
+      type, 
+      format_description(@description), 
+      'site name: ' + format_name
+    ]
   end
 
 end

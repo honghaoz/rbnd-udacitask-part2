@@ -1,11 +1,7 @@
 module Listable
 
-  def format_type#(type = nil)
-    type.ljust(10)
-  end
-
   def format_description(description)
-    "#{description}".ljust(30)
+    "#{description}"
   end
 
   def format_date(options = {})

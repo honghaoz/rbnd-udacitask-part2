@@ -44,4 +44,4 @@ new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-# new_list.filter('event')
+puts new_list.filter('event')
