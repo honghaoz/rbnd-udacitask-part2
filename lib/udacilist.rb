@@ -41,6 +41,7 @@ class UdaciList
     puts table, "\n"
   end
 
+  # fileter items by type
   def filter(type)
     @items.select { |item| item.type.casecmp(type).zero? }
   end
@@ -48,20 +49,32 @@ class UdaciList
   # save list into a csv file
   def export_to_csv
     puts 'Please enter a csv file name:'
-    filename = gets.chomp
-    filename = add_csv_suffix_if_needed filename
 
+    filename = get_filename
+    filename = add_csv_suffix_if_needed filename
+    
+    write_to_csv_file filename
+    
+  end
+
+  # read filename from standard input
+  def get_filename
+    filename = gets.chomp
+  end
+
+  # add .csv suffix if needed
+  def add_csv_suffix_if_needed(filename)
+    filename += (filename.end_with? '.csv') ? '' : '.csv'
+  end
+
+  # write list to .csv file
+  def write_to_csv_file(filename)
     CSV.open(filename, 'w') do |csv|
       csv << [@title]
       @items.each_with_index do |item, position|
         csv << [position + 1] + item.details
       end
     end
-  end
-
-  # add .csv suffix if needed
-  def add_csv_suffix_if_needed(filename)
-    filename += (filename.end_with? '.csv') ? '' : '.csv'
   end
 
 end
