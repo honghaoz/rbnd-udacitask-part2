@@ -46,3 +46,5 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 puts new_list.filter('event')
+
+new_list.export_to_csv

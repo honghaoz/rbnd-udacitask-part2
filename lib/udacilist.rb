@@ -45,4 +45,23 @@ class UdaciList
     @items.select { |item| item.type.casecmp(type).zero? }
   end
 
+  # save list into a csv file
+  def export_to_csv
+    puts 'Please enter a csv file name:'
+    filename = gets.chomp
+    filename = add_csv_suffix_if_needed filename
+
+    CSV.open(filename, 'w') do |csv|
+      csv << [@title]
+      @items.each_with_index do |item, position|
+        csv << [position + 1] + item.details
+      end
+    end
+  end
+
+  # add .csv suffix if needed
+  def add_csv_suffix_if_needed(filename)
+    filename += (filename.end_with? '.csv') ? '' : '.csv'
+  end
+
 end
