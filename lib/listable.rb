@@ -16,7 +16,16 @@ module Listable
   end
 
   def format_priority(priority)
-
+    case
+      when priority == 'high'
+        ' ⇧'
+      when priority == 'medium'
+        ' ⇨'
+      when priority == 'low'
+        ' ⇩'
+      else
+        ''
+    end
   end
 
 end

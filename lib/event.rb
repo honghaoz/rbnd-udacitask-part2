@@ -9,9 +9,6 @@ class EventItem
   end
 
   def details
-    # puts "123"
-    # puts format_description(@description)
-    # puts format_date(start_date: @start_date, end_date: @end_date)
     format_description(@description) + 'event dates: ' + format_date(start_date: @start_date, end_date: @end_date)
   end
 
