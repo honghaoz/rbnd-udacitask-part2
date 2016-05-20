@@ -1,16 +1,16 @@
 class UdaciList
   attr_reader :title, :items
 
-  def initialize(options={})
-    @title = options[:title]
+  def initialize(options = {})
+    @title = options[:title] ? options[:title] : 'Untitled List'
     @items = []
   end
 
-  def add(type, description, options={})
+  def add(type, description, options = {})
     type = type.downcase
-    @items.push TodoItem.new(description, options) if type == "todo"
-    @items.push EventItem.new(description, options) if type == "event"
-    @items.push LinkItem.new(description, options) if type == "link"
+    @items.push TodoItem.new(description, options) if type == 'todo'
+    @items.push EventItem.new(description, options) if type == 'event'
+    @items.push LinkItem.new(description, options) if type == 'link'
   end
 
   def delete(index)
@@ -18,9 +18,9 @@ class UdaciList
   end
 
   def all
-    puts "-" * @title.length
+    puts '-' * @title.length
     puts @title
-    puts "-" * @title.length
+    puts '-' * @title.length
     @items.each_with_index do |item, position|
       puts "#{position + 1}) #{item.details}"
     end
