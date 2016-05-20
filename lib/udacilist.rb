@@ -1,11 +1,12 @@
 require 'terminal-table'
+require 'etc'
 
 class UdaciList
   include UdaciListErrors
   attr_reader :title, :items
 
   def initialize(options = {})
-    @title = options[:title] ? options[:title] : 'Untitled List'
+    @title = options[:title] ? options[:title] : "#{Etc.getpwuid[:gecos] || Etc.getlogin}'s Untitled List"
     @items = []
   end
 

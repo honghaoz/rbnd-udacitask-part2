@@ -1,13 +1,19 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+  - I used `terminal-table` to print a well-formated table in console
+  - I used `etc` to get current user's name. To give a more meaningful list name
 2. Describe the 2 features you added to the project.
-  a) Feature 1...
-  b) Feature 2...
+  a) Print list in a formated way using table
+  b) 
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+  Probably 3 - 4 hours
 2. What was the most rewarding challenge you conquered?
+  Several Ruby syntax challenges, such as switch and trailing if statement. Also, Mixin is a new concept for me, I found module can access instance variable if it's included. but you must make sure that instance variable exists.
+
 3. What two additional features did you build? Why?
+  - Print list as a table
 4. Where do you still have room to grow?

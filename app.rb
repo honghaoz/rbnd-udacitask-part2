@@ -1,6 +1,7 @@
 require 'chronic'
 require 'colorize'
 require 'date'
+require 'csv'
 
 require_relative 'lib/listable'
 require_relative 'lib/errors'
