@@ -1,5 +1,9 @@
 module Listable
 
+  def format_type#(type = nil)
+    type.ljust(10)
+  end
+
   def format_description(description)
     "#{description}".ljust(30)
   end
@@ -18,11 +22,11 @@ module Listable
   def format_priority(priority)
     case
       when priority == 'high'
-        ' ⇧'
+        ' ⇧'.colorize(:red)
       when priority == 'medium'
-        ' ⇨'
+        ' ⇨'.colorize(:yellow)
       when priority == 'low'
-        ' ⇩'
+        ' ⇩'.colorize(:blue)
       else
         ''
     end
