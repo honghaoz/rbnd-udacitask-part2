@@ -5,7 +5,7 @@
   - I used `etc` to get current user's name. To give a more meaningful list name
   - I used `csv` to save list to a file
 2. Describe the 2 features you added to the project.
-  a) Print list in a formated way using table
+  a) Delete multiple items at once
   b) Save list as a csv file
 
 # REFLECTIONS
@@ -16,7 +16,7 @@
   Several Ruby syntax challenges, such as switch and trailing if statement. Also, Mixin is a new concept for me, I found module can access instance variable if it's included. but you must make sure that instance variable exists.
 
 3. What two additional features did you build? Why?
-  - Print list as a beautiful table
+  - Delete multiple items at once
   - Save list into a csv file
 4. Where do you still have room to grow?
   Code faster. I need more focused when learning new stuffs.

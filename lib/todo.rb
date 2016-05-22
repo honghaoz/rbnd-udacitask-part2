@@ -1,3 +1,6 @@
+require_relative 'errors'
+require_relative 'listable'
+
 class TodoItem
   include UdaciListErrors
   include Listable

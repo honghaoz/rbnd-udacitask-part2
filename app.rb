@@ -3,12 +3,7 @@ require 'colorize'
 require 'date'
 require 'csv'
 
-require_relative 'lib/listable'
-require_relative 'lib/errors'
 require_relative 'lib/udacilist'
-require_relative 'lib/todo'
-require_relative 'lib/event'
-require_relative 'lib/link'
 
 list = UdaciList.new(title: "Julia's Stuff")
 list.add('todo', 'Buy more cat food', due: '2016-02-03', priority: 'low')
@@ -45,6 +40,11 @@ new_list.all
 
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
-puts new_list.filter('event')
+new_list.filter('event')
+
+# Delete multiple items
+new_list.delete 1, 2, 3, 4, 5, 6
+
+new_list.all
 
 new_list.export_to_csv

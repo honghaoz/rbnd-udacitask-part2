@@ -1,3 +1,5 @@
+require_relative 'listable'
+
 class LinkItem
   include Listable
   attr_reader :description, :site_name, :type
